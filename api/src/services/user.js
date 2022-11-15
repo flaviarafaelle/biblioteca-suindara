@@ -3,7 +3,7 @@ import { randomBytes } from "crypto";
 import { User } from "../models/init.js";
 import DatabaseError from "../models/error.js";
 import { generatePasswordHash, validatePassword } from "../utils/password.js";
-
+import set from "date-fns/set/index.js";
 const generateRandomToken = () =>
   randomBytes(48).toString("base64").replace(/[+/]/g, ".");
 
@@ -67,8 +67,7 @@ class UserService {
       const passwordValid = await validatePassword(password, user.password);
 
       if (!passwordValid) return null;
-
-      user.lastLoginAt = Date.now();
+      user.lastLoginAt = set(new Date(), {});
       const updatedUser = await User.update({
         where: { id: user.id },
         data: { lastLoginAt: user.lastLoginAt },

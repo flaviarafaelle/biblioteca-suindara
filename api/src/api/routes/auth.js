@@ -39,14 +39,18 @@ const router = Router();
  *         description: Bad request, incorrect login credentials
  */
 router.post(urls.auth.login, requireSchema(loginSchema), async (req, res) => {
-  const { email, password } = req.validatedBody;
+  try {
+    const { email, password } = req.validatedBody;
 
-  const user = await UserService.authenticateWithPassword(email, password);
+    const user = await UserService.authenticateWithPassword(email, password);
 
-  if (user) {
-    res.json({ user });
-  } else {
-    res.status(401).json({ error: "Authentication failed" });
+    if (user) {
+      res.json({ user });
+    } else {
+      res.status(401).json({ error: "Authentication failed" });
+    }
+  } catch (e) {
+    res.status(500).json({ error: e.message, msg: "Authentication failed" });
   }
 });
 
