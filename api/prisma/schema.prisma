@@ -1,0 +1,176 @@
+// Prisma schema file
+// See https://www.prisma.io/docs/concepts/components/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  email         String         @unique @db.VarChar(255)
+  password      String         @db.VarChar(255)
+  token         String         @unique @db.VarChar(255)
+  name          String         @db.VarChar(255)
+  createdAt     DateTime       @default(now())
+  lastLoginAt   DateTime       @default(now())
+  isActive      Boolean        @default(true)
+  comments      Comment[]      @relation("CommentsUserId")
+  favoriteBooks FavoriteBook[] @relation("FavoriteBooksUserId")
+  rents         Rent[]         @relation("RentUserId")
+  userRoles     UserRole[]     @relation("UserRoleUserId")
+  userInfos     UserInfo[]     @relation("UserInfoUserId")
+
+  @@index([email])
+  @@index([token])
+}
+
+model Book {
+  id                Int       @id @default(autoincrement())
+  title             String
+  description       String
+  author            String
+  publishingCompany String
+  publishYear       Int
+  isbn              String    @unique
+  pages             Int       @default(0)
+  isAvailable       Boolean
+  createDate        DateTime
+  updatedDate       DateTime?
+  deletedDate       DateTime?
+  rentMaxDays       Int
+
+  bookCategorys BookCategory[] @relation("BookCategoryBookId")
+  comments      Comment[]      @relation("CommentBookId")
+  favoriteBooks FavoriteBook[] @relation("FavoriteBookBookId")
+  rents         Rent[]         @relation("RentBookId")
+
+  @@index([title])
+  @@index([author])
+  @@index([isbn])
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  displayName String?
+  createdDate DateTime
+  updatedDate DateTime?
+  deletedDate DateTime?
+
+  bookCategorys BookCategory[] @relation("BookCategoryCategoryId")
+
+  @@index([name])
+}
+
+model BookCategory {
+  id          Int       @id @default(autoincrement())
+  book        Book      @relation(name: "BookCategoryBookId", fields: [bookId], references: [id])
+  bookId      Int
+  category    Category  @relation(name: "BookCategoryCategoryId", fields: [categoryId], references: [id])
+  categoryId  Int
+  createDate  DateTime
+  deletedDate DateTime?
+}
+
+model Comment {
+  id          Int       @id @default(autoincrement())
+  book        Book      @relation(name: "CommentBookId", fields: [bookId], references: [id])
+  bookId      Int
+  user        User      @relation(name: "CommentsUserId", fields: [userId], references: [id])
+  userId      Int       @unique
+  title       String    @unique @db.VarChar(25)
+  comment     String    @db.VarChar(500)
+  stars       Float
+  createDate  DateTime
+  deletedDate DateTime?
+}
+
+model FavoriteBook {
+  id          Int       @id @default(autoincrement())
+  book        Book      @relation(name: "FavoriteBookBookId", fields: [bookId], references: [id])
+  bookId      Int
+  user        User      @relation(name: "FavoriteBooksUserId", fields: [userId], references: [id])
+  userId      Int       @unique
+  createDate  DateTime
+  deletedDate DateTime?
+}
+
+model Permission {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique @db.VarChar(50)
+  displayName String
+  createDate  DateTime
+  updatedDate DateTime?
+  deletedDate DateTime?
+
+  rolePermissions RolePermission[] @relation("RolePermissionPermissionId")
+}
+
+model Rent {
+  id             Int       @id @default(autoincrement())
+  user           User      @relation(name: "RentUserId", fields: [userId], references: [id])
+  userId         Int       @unique
+  book           Book      @relation(name: "RentBookId", fields: [bookId], references: [id])
+  bookId         Int
+  penalty        Float?
+  rentDate       DateTime
+  devolutionDate DateTime?
+  createDate     DateTime
+  deletedDate    DateTime?
+}
+
+model Role {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique @db.VarChar(50)
+  displayName String
+  createDate  DateTime
+  updatedDate DateTime?
+  deletedDate DateTime?
+
+  rolePermissions RolePermission[] @relation("RolePermissionRoleId")
+  userRoles       UserRole[]       @relation("UserRoleRoleId")
+
+  @@index([name])
+}
+
+model RolePermission {
+  id           Int         @id @default(autoincrement())
+  role         Role        @relation(name: "RolePermissionRoleId", fields: [roleId], references: [id])
+  roleId       Int
+  permission   Permission? @relation(name: "RolePermissionPermissionId", fields: [permissionId], references: [id])
+  permissionId Int?
+  createDate   DateTime
+  deletedDate  DateTime?
+}
+
+model UserRole {
+  id          Int       @id @default(autoincrement())
+  role        Role      @relation(name: "UserRoleRoleId", fields: [roleId], references: [id])
+  roleId      Int
+  user        User      @relation(name: "UserRoleUserId", fields: [userId], references: [id])
+  userId      Int       @unique
+  createDate  DateTime
+  deletedDate DateTime?
+}
+
+model UserInfo {
+  id                Int       @id @default(autoincrement())
+  user              User      @relation(name: "UserInfoUserId", fields: [userId], references: [id])
+  userId            Int       @unique
+  name              String
+  surname           String
+  address           String?
+  addressNumber     String?
+  addressComplement String?
+  addressDistrict   String?
+  addressCity       String?
+  addressZipcode    String?
+  createDate        DateTime
+  updateDate        DateTime?
+  deletedDate       DateTime?
+}
