@@ -96,7 +96,9 @@ router.post(
       if (error.isClientError()) {
         res.status(400).json({ error });
       } else {
-        next(error);
+        res
+          .status(500)
+          .json({ error: error.message, msg: "User creation failed" });
       }
     }
   }
