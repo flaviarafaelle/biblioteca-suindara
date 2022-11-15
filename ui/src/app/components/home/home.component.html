@@ -1,0 +1,60 @@
+<!-- hero -->
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper text-center">
+      <img
+        src="https://img.freepik.com/free-vector/education-horizontal-typography-banner-set-with-learning-knowledge-symbols-flat-illustration_1284-29493.jpg?w=1380&t=st=1668551855~exp=1668552455~hmac=d856816ae2db7af60cff7543efaa82ac025ec02a71a2306f829596c0a9454621"
+        alt="Random first slide"
+      />
+    </div>
+    <div class="carousel-caption text-center">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper text-center">
+      <img
+        src="https://img.freepik.com/free-vector/education-horizontal-typography-banner-set-with-learning-knowledge-symbols-flat-illustration_1284-29493.jpg?w=1380&t=st=1668551855~exp=1668552455~hmac=d856816ae2db7af60cff7543efaa82ac025ec02a71a2306f829596c0a9454621"
+        alt="Random second slide"
+      />
+    </div>
+    <div class="carousel-caption text-center">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper text-center">
+      <img
+        src="https://img.freepik.com/free-vector/education-horizontal-typography-banner-set-with-learning-knowledge-symbols-flat-illustration_1284-29493.jpg?w=1380&t=st=1668551855~exp=1668552455~hmac=d856816ae2db7af60cff7543efaa82ac025ec02a71a2306f829596c0a9454621"
+        alt="Random third slide"
+      />
+    </div>
+    <div class="carousel-caption text-center">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<!-- services -->
+<div class="col-12 services-bg">
+  <div class="col-12 text-center services-title">
+    <h2>Serviços oferecidos</h2>
+  </div>
+  <div class="row align-items-center text-center">
+    <div class="col-4 d-flex flex-column">
+      <app-book></app-book>
+      <h5>Empréstimos de livros</h5>
+    </div>
+    <div class="col-4 d-flex flex-column">
+      <app-disabled></app-disabled>
+      <h5>Acessibilidade</h5>
+    </div>
+    <div class="col-4 d-flex flex-column">
+      <app-heart></app-heart>
+      <h5>Agenda Cultural</h5>
+    </div>
+  </div>
+</div>

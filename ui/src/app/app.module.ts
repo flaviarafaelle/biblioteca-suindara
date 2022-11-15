@@ -9,6 +9,13 @@ import { BookComponent } from './shared/animations/book/book.component';
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 import { DisabledComponent } from './shared/animations/disabled/disabled.component';
+import { SobreComponent } from './components/sobre/sobre.component';
+import { AcervoComponent } from './components/acervo/acervo.component';
+import { HomeComponent } from './components/home/home.component';
+import { ContatoComponent } from './components/contato/contato.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { HeartComponent } from './shared/animations/heart/heart.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,17 +23,20 @@ import { DisabledComponent } from './shared/animations/disabled/disabled.compone
     FooterComponent,
     BookComponent,
     DisabledComponent,
+    SobreComponent,
+    AcervoComponent,
+    HomeComponent,
+    ContatoComponent,
+    CadastroComponent,
+    HeartComponent, 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule,],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { 
-  constructor (){
-    defineElement(lottie.loadAnimation)
+export class AppModule {
+  constructor() {
+    defineElement(lottie.loadAnimation);
   }
 }
