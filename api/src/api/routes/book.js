@@ -4,6 +4,7 @@ import BookService from "../../services/book.js";
 import { requireUser } from "../middlewares/auth.js";
 import { requireSchema, requireValidId } from "../middlewares/validate.js";
 import schema from "../schemas/book.js";
+import fetch from 'node-fetch'
 
 const router = Router();
 
@@ -199,6 +200,45 @@ router.delete("/:id", requireValidId, async (req, res, next) => {
       res.status(400).json({ error });
     } else {
       next(error);
+    }
+  }
+});
+
+/** @swagger
+ *
+ * /book/query:
+ *   post:
+ *     tags: [Book]
+ *     summary: Query book in ISBN API
+ *     security:
+ *       - BearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/BookAPI'
+ *     responses:
+ *       201:
+ *         description: Query response
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/BookAPIResponse'
+ */
+
+router.post("/query", async (req, res, next) => {
+  try {
+    const apiUrl = "https://www.googleapis.com/books/v1/volumes";
+    const url = `${apiUrl}?q=${encodeURI(req.body.query)}`;
+    const result = await fetch(url);
+    const json = await result.json();
+    res.status(201).json(json);
+  } catch (error) {
+    if (error.isClientError()) {
+      res.status(400).json({ error });
+    } else {
+      res.status(500).json({ error });
     }
   }
 });

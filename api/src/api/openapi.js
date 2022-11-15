@@ -7,6 +7,8 @@ import {
   userSchema,
 } from "./schemas/auth.js";
 import bookSchema from "./schemas/book.js";
+import bookAPISchema from "./schemas/bookapi.js";
+import bookAPIResponseSchema from "./schemas/bookapiresponse.js";
 import categorySchema from "./schemas/category.js";
 import bookCategorySchema from "./schemas/bookcategory.js";
 import commentSchema from "./schemas/comment.js";
@@ -38,6 +40,8 @@ export const definition = {
       changePasswordSchema,
       User: userSchema,
       Book: bookSchema,
+      BookAPI:bookAPISchema,
+      BookAPIResponse:bookAPIResponseSchema,
       Category: categorySchema,
       BookCategory: bookCategorySchema,
       Comment: commentSchema,
