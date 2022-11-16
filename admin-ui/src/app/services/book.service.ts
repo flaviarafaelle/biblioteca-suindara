@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class BookService {
   constructor(private http: HttpClient) {}
-  getWeatherData(): Observable<any> {
+  getBookData(): Observable<any> {
     return this.http.post(environment.apiUrl + 'book/query', {
       query: 'Escritoras de Cadernos Negros',
     });

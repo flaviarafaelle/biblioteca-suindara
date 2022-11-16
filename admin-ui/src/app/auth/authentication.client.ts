@@ -9,9 +9,9 @@ import { Observable } from 'rxjs';
 export class AuthenticationClient {
   constructor(private http: HttpClient) {}
 
-  public login(username: string, password: string): Observable<string> {
+  public login(username: string, password: string): Observable<any> {
     return this.http.post(
-      environment.apiUrl + '/user/login',
+      environment.apiUrl + 'auth/login',
       {
         email: username,
         password: password,
