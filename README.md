@@ -38,7 +38,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="..." width="100px;" alt="Foto do Flávia Santos no GitHub"/><br>
+        <img src="..." width="100px;" alt="Foto de Flávia Santos no GitHub"/><br>
         <sub>
           <b>Flávia Santos</b>
         </sub>
@@ -46,7 +46,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
-        <img src="..." width="100px;" alt="Foto do Arthur Nascimento no GitHub"/><br>
+        <img src="..." width="100px;" alt="Foto de Arthur Nascimento no GitHub"/><br>
         <sub>
           <b>Arthur Nascimento</b>
         </sub>
