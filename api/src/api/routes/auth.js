@@ -42,10 +42,10 @@ router.post(urls.auth.login, requireSchema(loginSchema), async (req, res) => {
   try {
     const { email, password } = req.validatedBody;
 
-    const user = await UserService.authenticateWithPassword(email, password);
+    const token = await UserService.authenticateWithPassword(email, password);
 
-    if (user) {
-      res.json({ user });
+    if (token) {
+      res.json({ token });
     } else {
       res.status(401).json({ error: "Authentication failed" });
     }
@@ -96,7 +96,9 @@ router.post(
       if (error.isClientError()) {
         res.status(400).json({ error });
       } else {
-        next(error);
+        res
+          .status(500)
+          .json({ error: error.message, msg: "User creation failed" });
       }
     }
   }

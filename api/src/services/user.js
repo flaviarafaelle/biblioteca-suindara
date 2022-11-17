@@ -74,7 +74,7 @@ class UserService {
       });
 
       delete updatedUser.password;
-      return updatedUser;
+      return updatedUser.token;
     } catch (err) {
       throw new DatabaseError(err);
     }
