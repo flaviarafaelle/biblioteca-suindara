@@ -51,6 +51,14 @@ Pessoas que contribuíram para este projeto:
         </sub>
       </a>
     </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://user-images.githubusercontent.com/101022170/202574068-0b1da6d5-edfa-4fe7-94c3-d5aa50680681.png" width="100px;" alt="Foto do Instituto Minas Programam no GitHub"/><br>
+        <sub>
+          <b>Minas Programam</b>
+        </sub>
+      </a>
+    </td>
   </tr>
 </table>
 
