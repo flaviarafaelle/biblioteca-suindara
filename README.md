@@ -4,7 +4,6 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/flaviarafaelle/biblioteca-suindara?color=pink&style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/flaviarafaelle/biblioteca-suindara?color=pink&style=for-the-badge)
-![GitHub top language](https://img.shields.io/github/languages/top/flaviarafaelle/biblioteca-suindara?color=pink&style=for-the-badge)
 
 <!---<img src="exemplo-image.png" alt="exemplo imagem">--->
 
@@ -32,13 +31,13 @@ Adicione comandos de execução e exemplos que você acha que os usuários achar
 
 ## 🤝 Colaboradores
 
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
+Pessoas que contribuíram para este projeto:
 
 <table>
   <tr>
     <td align="center">
       <a href="#">
-        <img src="..." width="100px;" alt="Foto de Flávia Santos no GitHub"/><br>
+        <img src="https://user-images.githubusercontent.com/101022170/202572723-4036de2a-f822-4f87-896c-1612f768d968.png" width="100px;" alt="Foto de Flávia Santos no GitHub"/><br>
         <sub>
           <b>Flávia Santos</b>
         </sub>
@@ -46,7 +45,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
-        <img src="..." width="100px;" alt="Foto de Arthur Nascimento no GitHub"/><br>
+        <img src="https://user-images.githubusercontent.com/101022170/202572593-3e4a22cd-cc07-4614-923f-0031aedc62cc.png" width="100px;" alt="Foto de Arthur Nascimento no GitHub"/><br>
         <sub>
           <b>Arthur Nascimento</b>
         </sub>
