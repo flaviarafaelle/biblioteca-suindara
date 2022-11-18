@@ -7,14 +7,17 @@
 //     background-size: 100% 100%;
 //     background-position: center;
 // }
-.services-bg {
+
+p {
+  font-weight: 300;
+}
+.about-bg {
   padding-top: 4em;
   padding-bottom: 4em;
   outline: 1px solid red;
 }
-.picsum-img-wrapper img {
-  width: 95%;
-  overflow-x: hidden;
+.about-img {
+  width: 15em;
 }
 .quote-bg-color {
   background-color: white;
@@ -26,11 +29,14 @@
   padding-top: 4em;
   padding-bottom: 4em;
 }
-.about-bg {
+.services-bg {
   padding-top: 4em;
   padding-bottom: 4em;
   outline: 1px solid red;
 }
-.about-img {
-  width: 15em;
+.picsum-img-wrapper img {
+  width: 95%;
+  overflow-x: hidden;
 }
+
+
