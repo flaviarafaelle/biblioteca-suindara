@@ -1,19 +1,12 @@
-.service-icon {
-  width: 5em;
+* {
+  outline: 1px solid red;
 }
-// .services-bg {
-//     background-image: url('/assets/Shape Abstract Donut by Streamlinehq.svg');
-//     background-repeat: no-repeat;
-//     background-size: 100% 100%;
-//     background-position: center;
-// }
-
 p {
   font-weight: 300;
 }
 .about-bg {
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding-top: 6em;
+  padding-bottom: 6em;
   outline: 1px solid red;
 }
 .about-img {
@@ -21,8 +14,10 @@ p {
 }
 .quote-bg-color {
   background-color: white;
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: 6em;
+  padding-bottom: 6em;
+  outline: 1px solid red;
+
 }
 .quote-bg-img {
   background-color: #FCF6F1;
@@ -34,9 +29,16 @@ p {
   padding-bottom: 4em;
   outline: 1px solid red;
 }
+.service-icon {
+  width: 5em;
+  outline: 1px solid red;
+}
 .picsum-img-wrapper img {
   width: 95%;
   overflow-x: hidden;
+  outline: 1px solid red;
 }
+
+
 
 
