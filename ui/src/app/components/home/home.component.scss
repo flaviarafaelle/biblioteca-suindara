@@ -1,6 +1,6 @@
-// * {
-//   outline: 1px solid red;
-// }
+* {
+  outline: 1px solid red;
+}
 p {
   font-weight: 300;
 }
@@ -31,6 +31,12 @@ p {
 .picsum-img-wrapper img {
   width: 95%;
   overflow-x: hidden;
+}
+.text {
+  padding-top: 17em;
+}
+.text h2 {
+  font-size: 2em;
 }
 
 

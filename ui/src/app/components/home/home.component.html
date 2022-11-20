@@ -1,28 +1,43 @@
 <!-- hero -->
-<ngb-carousel *ngIf="images">
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper text-center">
-      <div
-        style="
-          background-image: url('...');
-          background-size: cover;
-          height: 85vh;
-        "
-      ></div>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper text-center">
-      <div
-        style="
-          background-image: url('...');
-          background-size: cover;
-          height: 85vh;
-        "
-      ></div>
-    </div>
-  </ng-template>
-</ngb-carousel>
+<div class="col-12 d-flex flex-row">
+  <div class="col-6 text-center text">
+    <h2>Venha nos visitar!</h2>
+      <p>
+        Horário de funcionamento: 
+        Sábado das 14 às 17h
+      </p>
+      <p>
+        Local: banana, 51
+      </p>
+  </div>
+  <div class="col-6">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper text-center">
+          <div
+            style="
+              background-image: url('...');
+              background-size: cover;
+              height: 85vh;
+            "
+          ></div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper text-center">
+          <div
+            style="
+              background-image: url('...');
+              background-size: cover;
+              height: 85vh;
+            "
+          ></div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
+
 
 <!-- about -->
 <div class="col-12 about-bg">
