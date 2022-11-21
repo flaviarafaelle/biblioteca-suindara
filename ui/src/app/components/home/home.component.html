@@ -1,15 +1,5 @@
 <!-- hero -->
 <div class="col-12 d-flex flex-row">
-  <div class="col-6 text-center text">
-    <h2>Venha nos visitar!</h2>
-      <p>
-        Horário de funcionamento: 
-        Sábado das 14 às 17h
-      </p>
-      <p>
-        Local: banana, 51
-      </p>
-  </div>
   <div class="col-6">
     <ngb-carousel *ngIf="images">
       <ng-template ngbSlide>
@@ -36,24 +26,15 @@
       </ng-template>
     </ngb-carousel>
   </div>
-</div>
-
-
-<!-- about -->
-<div class="col-12 about-bg">
-  <div class="d-flex flex-row align-items-center">
-    <div class="col-6 text-center">
-      <img class="about-img" src="../assets/books.svg" alt="books" />
-    </div>
-    <div class="col-6 text-center p-1">
-      <h2>A Biblioteca Suindará</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-        consequuntur quaerat pariatur ullam, tenetur placeat doloribus harum
-        aperiam blanditiis dignissimos explicabo officiis nihil quisquam quam
-        ut, dolor voluptatem. Ad, incidunt.
-      </p>
-    </div>
+  <div class="col-6 text-center hero-text hero-bg-color">
+    <h2>Venha nos visitar!</h2>
+      <h4>
+        Horário de funcionamento: 
+        Sábado das 14 às 17h
+      </h4>
+      <button class="hero-button">
+        Local
+      </button>
   </div>
 </div>
 
@@ -64,15 +45,76 @@
   <div class="col-9 quote-bg-color">
     <figure class="text-center">
       <blockquote class="blockquote">
-        <p>
+        <h4 class="quote-color">
           Livro bom é livro que a gente passa à diante. O prazer da leitura não
           pode ser restrito.
-        </p>
+        </h4>
       </blockquote>
       <figcaption class="blockquote-footer">Caio Rossan</figcaption>
     </figure>
   </div>
+  <div class="col-2">
+    <img class="quote-img" src="../assets/book-quote.svg" alt="books">
+  </div>
 </div>
+
+<!-- about -->
+<div class="col-12 about-bg">
+  <div class="d-flex flex-row align-items-center">
+    <div class="col-6 text-center">
+      <img class="about-img" src="../assets/reader-about.svg" alt="reader" />
+    </div>
+    <div class="col-6 text-center p-1">
+      <h2>A Biblioteca Suindará</h2>
+      <h4>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+        consequuntur quaerat pariatur ullam, tenetur placeat doloribus harum
+        aperiam blanditiis dignissimos explicabo officiis nihil quisquam quam
+        ut, dolor voluptatem. Ad, incidunt.
+      </h4>
+    </div>
+  </div>
+</div>
+
+<!-- testemonials -->
+<div class="testimonials-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">O que nossos leitores dizem</h2>
+            </div>
+            <div class="row people">
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box">
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+                    </div>
+                    <div class="author">
+                        <h5 class="name">Ben Johnson</h5>
+                        <p class="title">CEO of Company Inc.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box">
+                        <p class="description">Aliquam varius finibus est, et interdum justo suscipit. Vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.                        </p>
+                    </div>
+                    <div class="author">
+                        <h5 class="name">Carl Kent</h5>
+                        <p class="title">Founder of Style Co.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box">
+                        <p class="description">Aliquam varius finibus est, et interdum justo suscipit. Vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
+                    </div>
+                    <div class="author">
+                        <h5 class="name">Emily Clark</h5>
+                        <p class="title">Owner of Creative Ltd.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
 <!-- services -->
 <div class="col-12 services-bg">
@@ -94,45 +136,3 @@
     </div>
   </div>
 </div>
-
-<!-- testemonials -->
-<!-- <div
-  id="carouselExampleFade"
-  class="carousel slide carousel-fade"
-  data-bs-ride="carousel"
->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img
-        src="../assets/Sub-page - Depoimentos.svg"
-        class="d-block w-100"
-        alt="..."
-      />
-    </div>
-    <div class="carousel-item">
-      <img
-        src="../assets/Sub-page - Depoimentos.svg"
-        class="d-block w-100"
-        alt="..."
-      />
-    </div>
-  </div>
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExampleFade"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExampleFade"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> -->
