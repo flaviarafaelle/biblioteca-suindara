@@ -1,6 +1,6 @@
 // GLOBAL
 * {
-  outline: 1px solid red;
+  // outline: 1px solid red;
 }
 h2 {
   font-weight: bold;
@@ -24,9 +24,11 @@ p {
 }
 .hero-text h2{
   color: #AAD7D3;
+  text-align: left;
 }
 .hero-text h4 {
- color: black;
+  color: black;
+  text-align: left;
 }
 .hero-text h2 {
   font-size: 2em;
@@ -66,7 +68,7 @@ p {
 
 // SERVICES
 .services-bg {
-  padding-top: 10em;
+  padding-top: 9em;
   padding-bottom: 10em;
 }
 .service-icon {
