@@ -1,5 +1,3 @@
-/* Authentification */
-
 export const loginSchema = {
   type: "object",
   properties: {

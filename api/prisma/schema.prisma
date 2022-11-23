@@ -43,6 +43,7 @@ model Book {
   updatedDate       DateTime?
   deletedDate       DateTime?
   rentMaxDays       Int
+  imageURL          String
 
   bookCategorys BookCategory[] @relation("BookCategoryBookId")
   comments      Comment[]      @relation("CommentBookId")
