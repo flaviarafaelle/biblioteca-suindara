@@ -33,7 +33,7 @@
                     >
                     <input
                         id="email1"
-                        type="text"
+                        type="email"
                         [(ngModel)]="email"
                         placeholder="Email"
                         pInputText
@@ -51,6 +51,7 @@
                         [(ngModel)]="password"
                         placeholder="Senha"
                         [toggleMask]="true"
+                        type="password"
                         styleClass="mb-5"
                         inputStyleClass="w-full p-3 md:w-30rem"
                     ></p-password>
@@ -62,6 +63,7 @@
                             <p-checkbox
                                 id="rememberme1"
                                 [binary]="true"
+                                [(ngModel)]="rememberMe"
                                 styleClass="mr-2"
                             ></p-checkbox>
                             <label for="rememberme1">Lembre de mim</label>

@@ -8,6 +8,7 @@ export default {
     publishYear: { type: "integer" },
     isbn: { type: "string" },
     pages: { type: "integer" },
+    imageURL: { type: "string" },
     isAvailable: { type: "boolean" },
     createDate: { type: "string", format: "date-time" },
     updatedDate: { type: "string", format: "date-time" },

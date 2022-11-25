@@ -1,1 +1,56 @@
-<p>create works!</p>
+<div class="container">
+    <div class="col-12 md:col-12">
+        <div class="p-inputgroup">
+            <input
+                type="text"
+                pInputText
+                placeholder="Search"
+                [(ngModel)]="bookQuery"
+            />
+            <button
+                type="button"
+                pButton
+                pRipple
+                (click)="search()"
+                icon="pi pi-send"
+                styleClass="p-button-warn"
+            ></button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="grid">
+        <div class="col-4 p-2" *ngFor="let book of books">
+            <p-card
+                header="{{ book?.volumeInfo?.title }}"
+                subheader="{{ book?.volumeInfo?.subtitle }}"
+                [style]="{ width: '360px' }"
+                styleClass="shadow-2 text-center"
+            >
+                <ng-template pTemplate="header">
+                    <img
+                        alt="Card"
+                        class="max-w-min"
+                        *ngIf="
+                            book?.volumeInfo?.imageLinks?.thumbnail &&
+                            book?.volumeInfo?.imageLinks?.thumbnail !== ''
+                        "
+                        src="{{ book?.volumeInfo?.imageLinks?.thumbnail }}"
+                    />
+                </ng-template>
+                <p>
+                    {{ book?.volumeInfo?.description }}
+                </p>
+                <!-- <ng-template pTemplate="footer">
+                    <p-button label="Save" icon="pi pi-check"></p-button>
+                    <p-button
+                        label="Cancel"
+                        icon="pi pi-times"
+                        styleClass="p-button-secondary"
+                        [style]="{ 'margin-left': '.5em' }"
+                    ></p-button>
+                </ng-template> -->
+            </p-card>
+        </div>
+    </div>
+</div>

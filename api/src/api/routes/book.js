@@ -4,7 +4,7 @@ import BookService from "../../services/book.js";
 import { requireUser } from "../middlewares/auth.js";
 import { requireSchema, requireValidId } from "../middlewares/validate.js";
 import schema from "../schemas/book.js";
-import fetch from 'node-fetch'
+import fetch from "node-fetch";
 
 const router = Router();
 
@@ -231,6 +231,7 @@ router.post("/query", async (req, res, next) => {
   try {
     const apiUrl = "https://www.googleapis.com/books/v1/volumes";
     const url = `${apiUrl}?q=${encodeURI(req.body.query)}`;
+    console.log(url);
     const result = await fetch(url);
     const json = await result.json();
     res.status(201).json(json);

@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class BookService {
     constructor(private http: HttpClient) {}
-    getBookData(query: string): Observable<any> {
+    public getBookData(query: string): Observable<any> {
         return this.http.post(environment.apiUrl + 'book/query', {
             query,
         });
