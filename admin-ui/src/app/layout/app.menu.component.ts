@@ -23,12 +23,11 @@ export class AppMenuComponent implements OnInit {
                 ],
             },
             {
-                label: 'Livros',
                 items: [
                     {
-                        label: 'Cadastro',
+                        label: 'Livros',
                         icon: 'pi pi-fw pi-book',
-                        routerLink: ['/pages/book/create'],
+                        routerLink: ['/pages/book'],
                     },
                 ],
             },

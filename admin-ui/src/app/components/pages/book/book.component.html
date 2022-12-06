@@ -1,0 +1,154 @@
+<p-table
+    #dt
+    [value]="books"
+    [(selection)]="selectedBooks"
+    dataKey="id"
+    styleClass="p-datatable-customers"
+    [rowHover]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [loading]="loading"
+    [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [filterDelay]="0"
+    [globalFilterFields]="['title', 'author', 'publishingCompany', 'isbn']"
+>
+    <ng-template pTemplate="caption">
+        <div class="table-header flex justify-content-between">
+            <button
+                pButton
+                type="button"
+                class="p-button-success"
+                icon="pi pi-plus"
+            ></button>
+            <span class="p-input-icon-left align-self-end">
+                <i class="pi pi-search"></i>
+                <input
+                    pInputText
+                    type="text"
+                    [(ngModel)]="search"
+                    (input)="applyFilterGlobal($event, 'contains')"
+                    placeholder="Busca global"
+                />
+            </span>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 3rem"></th>
+            <th pSortableColumn="title">
+                Titulo <p-sortIcon field="title"></p-sortIcon>
+            </th>
+            <th pSortableColumn="author">
+                Autor <p-sortIcon field="author"></p-sortIcon>
+            </th>
+            <th pSortableColumn="publishingCompany">
+                Editora
+                <p-sortIcon field="publishingCompany"></p-sortIcon>
+            </th>
+            <th pSortableColumn="isbn">
+                ISBN <p-sortIcon field="isbn"></p-sortIcon>
+            </th>
+            <th pSortableColumn="isAvailable">
+                Disponivel? <p-sortIcon field="isAvailable"></p-sortIcon>
+            </th>
+            <th style="width: 8rem"></th>
+            <th style="width: 8rem"></th>
+        </tr>
+        <tr>
+            <th>
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th>
+                <input
+                    pInputText
+                    type="text"
+                    (input)="applyFilter($event, 'title', 'startsWith')"
+                    placeholder="Busca por titulo"
+                    class="p-column-filter"
+                />
+            </th>
+            <th>
+                <input
+                    pInputText
+                    type="text"
+                    [(ngModel)]="searchAuthor"
+                    (input)="applyFilter($event, 'author', 'contains')"
+                    placeholder="Busca por autor"
+                    class="p-column-filter"
+                />
+            </th>
+            <th>
+                <input
+                    pInputText
+                    type="text"
+                    [(ngModel)]="searchPublishingCompany"
+                    (input)="applyFilter($event, 'publishingCompany', 'contains')"
+                    placeholder="Busca por editora"
+                    class="p-column-filter"
+                />
+            </th>
+            <th>
+                <input
+                    pInputText
+                    type="text"
+                    [(ngModel)]="searchISBN"
+                    (input)="applyFilter($event, 'isbn', 'contains')"
+                    placeholder="Busca por ISBN"
+                    class="p-column-filter"
+                />
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-book>
+        <tr class="p-selectable-row">
+            <td>
+                <p-tableCheckbox [value]="book"></p-tableCheckbox>
+            </td>
+            <td>
+                <span class="p-column-title">Titulo</span>
+                {{ book.title }}
+            </td>
+            <td>
+                <span class="p-column-title">Autor</span>
+                <span class="image-text">{{ book.author }}</span>
+            </td>
+            <td>
+                <span class="p-column-title">Editora</span>
+                <span class="image-text">{{ book.publishingCompany }}</span>
+            </td>
+            <td>
+                <span class="p-column-title">ISBN</span>
+                {{ book.isbn }}
+            </td>
+            <td>
+                <span class="p-column-title">Disponivel?</span>
+                <span>
+                    <p-checkbox
+                        [(ngModel)]="book.isAvailable"
+                        [binary]="true"
+                        [disabled]="true"
+                    ></p-checkbox>
+                </span>
+            </td>
+            <td></td>
+            <td style="text-align: center">
+                <button
+                    pButton
+                    type="button"
+                    class="p-button-info"
+                    icon="pi pi-pencil"
+                ></button>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="8">Nenhum livro encontrado.</td>
+        </tr>
+    </ng-template>
+</p-table>

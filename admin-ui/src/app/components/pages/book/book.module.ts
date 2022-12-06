@@ -6,8 +6,10 @@ import { CardModule } from 'primeng/card';
 import { BookRoutingModule } from './book-routing.module';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
-import { CreateComponent } from './create/create.component';
 import { SkeletonModule } from 'primeng/skeleton';
+import { BookComponent } from './book.component';
+import { CheckboxModule } from 'primeng/checkbox';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
     imports: [
@@ -18,8 +20,10 @@ import { SkeletonModule } from 'primeng/skeleton';
         ButtonModule,
         CardModule,
         BookRoutingModule,
-        SkeletonModule
+        SkeletonModule,
+        TableModule,
+        CheckboxModule,
     ],
-    declarations: [CreateComponent],
+    declarations: [BookComponent],
 })
 export class BookModule {}

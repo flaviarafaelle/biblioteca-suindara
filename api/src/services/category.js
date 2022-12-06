@@ -4,7 +4,7 @@ import DatabaseError from "../models/error.js";
 class CategoryService {
   static async list() {
     try {
-      return Category.findMany();
+      return Category.findMany({ where: { deletedDate: null } });
     } catch (err) {
       throw new DatabaseError(err);
     }
@@ -12,7 +12,7 @@ class CategoryService {
 
   static async get(id) {
     try {
-      return await Category.findUnique({ where: { id } });
+      return await Category.findUnique({ where: { id, deletedDate: null } });
     } catch (err) {
       throw new DatabaseError(err);
     }
