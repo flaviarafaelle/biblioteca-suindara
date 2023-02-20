@@ -37,14 +37,6 @@ Pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://user-images.githubusercontent.com/101022170/202572723-4036de2a-f822-4f87-896c-1612f768d968.png" width="100px;" alt="Foto de Flávia Santos no GitHub"/><br>
-        <sub>
-          <b>Flávia Santos</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
         <img src="https://user-images.githubusercontent.com/101022170/202572593-3e4a22cd-cc07-4614-923f-0031aedc62cc.png" width="100px;" alt="Foto de Arthur Nascimento no GitHub"/><br>
         <sub>
           <b>Arthur Nascimento</b>
@@ -53,9 +45,9 @@ Pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://user-images.githubusercontent.com/101022170/202574068-0b1da6d5-edfa-4fe7-94c3-d5aa50680681.png" width="100px;" alt="Foto do Instituto Minas Programam no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/101022170?v=4" width="100px;" alt="Foto de Flávia Santos no GitHub"/><br>
         <sub>
-          <b>Minas Programam</b>
+          <b>Flávia Santos</b>
         </sub>
       </a>
     </td>
